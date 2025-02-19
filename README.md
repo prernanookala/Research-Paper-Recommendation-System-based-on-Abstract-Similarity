@@ -1,66 +1,72 @@
 📚 Research Paper Recommendation System based on Abstract Similarity
 
-📌 Project Overview
+🏆 Project Overview
+Finding relevant academic papers is challenging with the ever-growing volume of research. This system solves that problem by providing accurate and context-aware recommendations based on abstract similarity.
 
-This project focuses on developing a Research Paper Recommendation System that suggests academic papers based on abstract similarity. Using advanced Natural Language Processing (NLP) techniques, the system efficiently identifies semantically similar research papers across diverse scientific disciplines.
+✅ Natural Language Processing (NLP) based recommendations
+✅ State-of-the-art Embeddings (SBERT, AllenAI-Specter, TF-IDF)
+✅ Fast retrieval with LanceDB for large datasets
+✅ Explainability with RAG (Retrieval-Augmented Generation)
 
-🚀 System Overview
+🚀 Key Features
+🔹 Abstract Similarity Matching - Finds the most relevant papers based on semantic similarity.
+🔹 Hybrid Scoring Mechanism - Considers category, similarity, clustering, and temporal relevance.
+🔹 Fast & Scalable Retrieval - Uses LanceDB to store and query high-dimensional embeddings efficiently.
+🔹 Explainable AI - Google FLAN-T5 generates human-readable explanations for recommendations.
+🔹 Support for Large-Scale Datasets - Handles millions of research papers effectively.
 
-The system was developed with the following key components:
+🏗️ System Architecture
 
-TF-IDF Baseline Model: Used for initial similarity calculations.
+🛠 Technologies Used
+Python 3.8+
+Hugging Face Transformers (SBERT, AllenAI-Specter, FLAN-T5)
+LanceDB (Vector storage & retrieval)
+Scikit-learn (TF-IDF, Clustering)
+Streamlit (User Interface)
 
-SBERT Embeddings (all-MiniLM-L6-v2): Pre-trained embeddings to enhance semantic similarity.
+🔍 How it Works
+User inputs an abstract.
+Preprocessing: Cleaning & feature extraction.
+Embedding Generation: Using TF-IDF, SBERT, or AllenAI-Specter.
+Similarity Matching: Finds the closest abstracts using cosine similarity.
+Hybrid Scoring: Adjusts ranking based on category, clustering, and temporal relevance.
+RAG Explainability: Generates human-like explanations for recommendations.
+Results Displayed! 🎉
 
-AllenAI-Specter Embeddings: Used to capture contextual nuances in research abstracts.
+📊 Dataset Details
+📖 Source: ArXiv Metadata Snapshot
 
-Fine-Tuned all-MiniLM-L6-v2: Optimized version of SBERT for improved recommendation accuracy.
+📝 Size: 2.6M+ research papers across 149 categories
 
-LanceDB: A high-performance vector database for efficient similarity search and retrieval.
+📊 Filtered Sample: ~100,000 papers for high relevance
 
-Retrieval-Augmented Generation (RAG): Integrated with google/flan-t5-large to provide natural language explanations for recommendations.
+🔍 Fields Used:
+Title, Authors, Categories, Abstract, Publication Date
 
-🗂️ Dataset
+🛠 Preprocessing Steps:
 
-Source: ArXiv Metadata Snapshot
+Stratified Sampling to ensure category balance.
 
-Contains 2.6 million research papers across 149 categories.
+Text Cleaning (stopword removal, lowercasing, lemmatization).
 
-Stratified sample of 100,000 papers selected to ensure balanced representation.
+TF-IDF and Embedding Generation for accurate recommendations.
 
-Preprocessing steps applied:
-Combined fields (title, authors, categories, comments, abstracts).
+📈 Performance & Evaluation
 
-Text normalization (stopword removal, lowercasing, lemmatization).
+✅ Evaluation Methods:
+✔ Category Matching - Measures how well recommendations match the input category.
+✔ Clustering-Based Similarity - Uses K-Means clustering for grouping similar papers.
+✔ Temporal Relevance - Prioritizes recent publications.
+✔ Hybrid Scoring - Combines multiple factors for best recommendations.
 
-TF-IDF vectorization & embeddings generation.
-
-📊 Evaluation & Results
-
-The system was evaluated using five scoring methods:
-
-Category-Based Evaluation 🏷️
-
-Clustering-Based Evaluation 📊
-
-Similarity-Based Evaluation 🔎
-
-Temporal Evaluation ⏳
-
-Hybrid Scoring ⚖️
-
-Performance Metrics Used:
-
+📊 Metrics Used:
 Precision@k
 
 Recall@k
 
 Mean Reciprocal Rank (MRR)
 
-🔬 Findings:
-AllenAI-Specter embeddings produced the most contextually accurate recommendations.
-
-Fine-tuned all-MiniLM-L6-v2 performed well but was more suitable for specific domains like vehicle-level control and congestion analysis.
-
-Retrieval-Augmented Generation (RAG) enhanced explainability by providing natural language explanations for recommendations.
-
+🏆 Key Findings:
+📌 AllenAI-Specter embeddings delivered the most accurate recommendations.
+📌 Fine-tuned SBERT performed well but was task-specific.
+📌 TF-IDF Baseline provided quick results but lacked deep semantic understanding.
